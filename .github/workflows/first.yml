@@ -2,7 +2,8 @@ name: First try in dynamic workflows
 
 on:
   push:
-    branches: -main
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
