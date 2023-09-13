@@ -15,7 +15,7 @@ jobs:
         shell: bash
 
   secondperf:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - name: runexitperformance
         run: echo "exited from the performance test "
