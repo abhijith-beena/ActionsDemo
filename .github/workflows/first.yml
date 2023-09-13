@@ -8,7 +8,7 @@ on:
 
 jobs:
   firstperf:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - name: run performance
         run: echo "Performance tests run"
