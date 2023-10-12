@@ -1,5 +1,5 @@
 describe('First Spec', () => {
-  it('verify orange hrm', () => {
+  it('verify gmail', () => {
     cy.visit('https://www.gmail.com');
   })
 })
