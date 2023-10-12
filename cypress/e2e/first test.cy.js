@@ -1,5 +1,5 @@
-describe('template spec', () => {
+describe('First Spec', () => {
   it('verify orange hrm', () => {
-    cy.visit('https://www.orangehrm.com/');
+    cy.visit('https://www.gmail.com');
   })
 })
