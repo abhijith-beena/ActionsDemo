@@ -24,4 +24,9 @@ jobs:
           name: cypress-execution-report
           path: cypress/reports/html
           retention-days: 90
-      
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          branch: gh-pages
+          folder: cypress/reports/html
+          clean: true
