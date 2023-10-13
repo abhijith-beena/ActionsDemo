@@ -18,6 +18,7 @@ jobs:
         with:
           command: npx cypress run 
       - name: Uploading artifact
+        id: upload-artifact
         uses: actions/upload-artifact@v3
         if: always()
         with:
@@ -33,7 +34,12 @@ jobs:
           publish_dir: cypress/reports/html 
           force_orphan: true
 
+      - name: Set artifact download link
+        id: artifact-link
+        run: echo "::set-output name=artifact_link::https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-artifact.outputs.uploaded-artifact }}/cypress-execution-report.zip"
+  
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+         ARTIFACT_LINK: ${{ steps.artifact-link.outputs.artifact_link }}
