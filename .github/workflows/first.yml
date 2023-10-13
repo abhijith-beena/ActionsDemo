@@ -32,3 +32,8 @@ jobs:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: cypress/reports/html 
           force_orphan: true
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
