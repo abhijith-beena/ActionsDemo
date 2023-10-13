@@ -1,4 +1,4 @@
-name: First try in dynamic workflows
+name: First work flow
 
 on:
   push:
@@ -7,16 +7,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  firstperf:
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: run performance
-        run: echo "Performance tests run"
-        shell: bash
+      - name: Checkout
+        uses: actions/checkout@v3
 
-  secondperf:
-    runs-on: ubuntu-latest
-    steps:
-      - name: runexitperformance
-        run: echo "exited from the performance test "
-        shell: bash
+      - name: Cypress-Run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npx cypress run 
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-execution-report
+          path: cypress/reports/html
+          retention-days: 90
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: cypress/reports/html 
+          force_orphan: true
