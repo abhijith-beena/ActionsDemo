@@ -39,4 +39,6 @@ jobs:
         env:
          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
          SLACK_TITLE: Artifact Download 
-         SLACK_MESSAGE: "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-artifact.outputs.uploaded-artifact }}/cypress-execution-report.zip"
+         SLACK_MESSAGE: |
+            GitHub Pages link: https://${{ github.repository }}/cypress/reports/html/
+            Artifact download link: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/${{ steps.upload-artifact.outputs.uploaded-artifact }}/cypress-execution-report.zip
