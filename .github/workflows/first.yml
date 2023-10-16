@@ -1,4 +1,4 @@
-name: First work flow
+name: First workflow
 
 on:
   push:
@@ -27,11 +27,15 @@ jobs:
           path: cypress/reports/html
           retention-days: 90
 
+      - name: Parse Cypress Results
+        id: parse-results
+        run: echo "::set-output name=status::$(cat cypress/results/output.json | jq -r '.totalTests, .totalPassed, .totalFailed')"
+
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: "Artifact Download"
+          SLACK_TITLE: "Cypress Test Results"
           SLACK_MESSAGE: |
             'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
-          
+            'Test Status: ${{ steps.parse-results.outputs.status }}'
