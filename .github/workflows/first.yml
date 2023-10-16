@@ -28,6 +28,7 @@ jobs:
           retention-days: 90
 
       - name: Deploy to git hub pages
+        if: always()  
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
@@ -35,9 +36,10 @@ jobs:
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
+        if: always()
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "Cypress Test Results"
           SLACK_MESSAGE: |
             'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
-            'GitHub Pages URL: https://${{ github.repository }}/cypress/reports/html/'
+            'GitHub Pages URL: https://${{ github.actor }}.github.io/${{ github.event.repository.name  }}'
