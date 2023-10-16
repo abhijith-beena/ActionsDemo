@@ -27,9 +27,11 @@ jobs:
           path: cypress/reports/html
           retention-days: 90
 
-      - name: Parse Cypress Results
-        id: parse-results
-        run: echo "::set-output name=status::$(cat cypress/results/output.json | jq -r '.totalTests, .totalPassed, .totalFailed')"
+      - name: Deploy to git hub pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: cypress/reports/html
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
@@ -38,4 +40,4 @@ jobs:
           SLACK_TITLE: "Cypress Test Results"
           SLACK_MESSAGE: |
             'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
-            'Test Status: ${{ steps.parse-results.outputs.status }}'
+            'GitHub Pages URL: https://${{ github.repository }}/cypress/reports/html/'
