@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-10-16T11:24:03.206Z",
-    "end": "2023-10-16T11:24:07.681Z",
-    "duration": 4475,
+    "start": "2023-10-16T11:35:22.846Z",
+    "end": "2023-10-16T11:35:27.294Z",
+    "duration": 4448,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "af2930f9-bcac-4793-a4b7-92b61755a4cd",
+      "uuid": "f408e334-50f0-40fa-b3e3-c7942328f156",
       "title": "",
       "fullFile": "cypress/e2e/first test.cy.js",
       "file": "cypress/e2e/first test.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a2016a0e-8694-4d4d-8e23-74593b55f287",
+          "uuid": "9672af34-bdcc-46cd-889d-3559458bfd3a",
           "title": "First Spec",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "verify gmail",
               "fullTitle": "First Spec verify gmail",
               "timedOut": null,
-              "duration": 1313,
+              "duration": 1222,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('https://www.gmail.com');",
               "err": {},
-              "uuid": "23d4c8e4-3d10-4ad9-acc7-2e1f6d67e9fd",
-              "parentUUID": "a2016a0e-8694-4d4d-8e23-74593b55f287",
+              "uuid": "38474af0-a19c-466e-83ef-a0eac2640265",
+              "parentUUID": "9672af34-bdcc-46cd-889d-3559458bfd3a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "23d4c8e4-3d10-4ad9-acc7-2e1f6d67e9fd"
+            "38474af0-a19c-466e-83ef-a0eac2640265"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1313,
+          "duration": 1222,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
