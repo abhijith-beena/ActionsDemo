@@ -33,4 +33,5 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "Artifact Download"
           SLACK_MESSAGE: |
-            Artifact download link: https://github.com/${{ github.repository }}/suites/${{ github.run_id }}/artifacts/${{ steps.upload-artifact}}
+            'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
+          
