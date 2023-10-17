@@ -33,7 +33,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          publish_dir: cypress/reports/html
+          publish_dir: cypress/reports/mocha
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
@@ -42,9 +42,8 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "Cypress Test Results"
           SLACK_MESSAGE: |
-            'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
             'GitHub Pages URL: https://${{ github.actor }}.github.io/${{ github.event.repository.name  }}'
             'Cypress Dashboard URL: https://dashboard.cypress.io/projects/m3b8cw/runs/${{ steps.cypress.outputs.runId }}'
 
       - name: Send report to Slack
-        run: node sendReport.js
+        run: npx sendReport.js ${{ secrets.SLACK_WEBHOOK }}
