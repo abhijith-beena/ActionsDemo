@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const slackWebhookUrl = 'https://hooks.slack.com/services/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';  // Replace with your Slack webhook URL
+const slackWebhookUrl = 'https://hooks.slack.com/services/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';  // Replace with your Slack webhook URL
 
 const sendMochawesomeReportToSlack = async () => {
   try {
