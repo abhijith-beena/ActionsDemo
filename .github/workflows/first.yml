@@ -46,4 +46,4 @@ jobs:
             'Cypress Dashboard URL: https://dashboard.cypress.io/projects/m3b8cw/runs/${{ steps.cypress.outputs.runId }}'
 
       - name: Send report to Slack
-        run: npx sendReport.js ${{ secrets.SLACK_WEBHOOK }}
+        run: npx node sendReport ${{ secrets.SLACK_WEBHOOK }}
