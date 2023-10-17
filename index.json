@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2023-10-17T12:23:35.817Z",
-    "end": "2023-10-17T12:23:43.618Z",
-    "duration": 7801,
+    "start": "2023-10-17T12:28:13.690Z",
+    "end": "2023-10-17T12:28:21.353Z",
+    "duration": 7663,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "20ad7bae-0a0e-4a87-9fc2-3968d4f109e0",
+      "uuid": "5a3a3b93-36a3-457e-bea8-8ddb20cce8dd",
       "title": "",
       "fullFile": "cypress/e2e/first test.cy.js",
       "file": "cypress/e2e/first test.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "798b70dc-f451-471a-bb7e-6db0abbefeea",
+          "uuid": "c1badd5e-5d45-4507-9435-ace0bc457eaf",
           "title": "First Spec",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "verify the first test",
               "fullTitle": "First Spec verify the first test",
               "timedOut": null,
-              "duration": 2938,
+              "duration": 2500,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.visit('https://opensource-demo.orangehrmlive.com/');\ncy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type(\"Admin\");",
               "err": {},
-              "uuid": "5469f1fe-a16f-42a9-85f9-e94db8f2852b",
-              "parentUUID": "798b70dc-f451-471a-bb7e-6db0abbefeea",
+              "uuid": "940538f8-f4d0-415c-ae83-aef5668633bd",
+              "parentUUID": "c1badd5e-5d45-4507-9435-ace0bc457eaf",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "verify the first test",
               "fullTitle": "First Spec verify the first test",
               "timedOut": null,
-              "duration": 1453,
+              "duration": 1889,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.visit('https://opensource-demo.orangehrmlive.com/');\ncy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type(\"Admin\");\ncy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type(\"admin123\");",
               "err": {},
-              "uuid": "d7b566a5-5e6f-4fe5-935e-5b5e9d1ea5eb",
-              "parentUUID": "798b70dc-f451-471a-bb7e-6db0abbefeea",
+              "uuid": "be800ac0-bccd-43f5-85ab-b8d6ed428da0",
+              "parentUUID": "c1badd5e-5d45-4507-9435-ace0bc457eaf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5469f1fe-a16f-42a9-85f9-e94db8f2852b",
-            "d7b566a5-5e6f-4fe5-935e-5b5e9d1ea5eb"
+            "940538f8-f4d0-415c-ae83-aef5668633bd",
+            "be800ac0-bccd-43f5-85ab-b8d6ed428da0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4391,
+          "duration": 4389,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
