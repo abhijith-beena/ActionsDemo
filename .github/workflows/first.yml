@@ -27,6 +27,11 @@ jobs:
           path: cypress/reports/html
           retention-days: 90
 
+      - name: Set Cypress Dashboard URL as output
+        id: cypress-dashboard-url
+        run: echo "::set-output name=cypress_dashboard_url::https://dashboard.cypress.io/projects/${{ steps.cypress.outputs.runId }}/runs/${{ steps.cypress.outputs.runId }}"
+  
+
       - name: Deploy to git hub pages
         if: always()  
         uses: peaceiris/actions-gh-pages@v3
@@ -43,3 +48,4 @@ jobs:
           SLACK_MESSAGE: |
             'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
             'GitHub Pages URL: https://${{ github.actor }}.github.io/${{ github.event.repository.name  }}'
+            'Cypress Dashboard URL: ${{ steps.cypress-dashboard-url.outputs.cypress_dashboard_url }}'
