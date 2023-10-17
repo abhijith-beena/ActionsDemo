@@ -45,3 +45,6 @@ jobs:
             'Cypress execution report artifact: [Download Cypress Report](${{ steps.upload-artifact.outputs.uploaded-path }})'
             'GitHub Pages URL: https://${{ github.actor }}.github.io/${{ github.event.repository.name  }}'
             'Cypress Dashboard URL: https://dashboard.cypress.io/projects/m3b8cw/runs/${{ steps.cypress.outputs.runId }}'
+
+      - name: Send report to Slack
+        run: node sendReport.js
