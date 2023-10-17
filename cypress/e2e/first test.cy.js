@@ -1,5 +1,5 @@
-describe('First Spec', () => {
-  it('verify the first test', () => {
+describe('slack reporting Spec', () => {
+  it('verify the slack reporting', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/');
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type("Admin");
   })
