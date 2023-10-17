@@ -30,7 +30,7 @@ jobs:
 
       - name: Set Cypress Dashboard URL as output
         id: cypress-dashboard-url
-        run: echo "::set-output name=cypress_dashboard_url::https://dashboard.cypress.io/projects/m3b8cw/runs/${{ steps.cypress.outputs.runId }}"
+        run: echo "::set-output name=cypress_dashboard_url::https://dashboard.cypress.io/projects/m3b8cw/runs/${{ steps.cypress.outputs.recordKey }}"
   
 
       - name: Deploy to git hub pages
