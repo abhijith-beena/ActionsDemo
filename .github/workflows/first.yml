@@ -16,7 +16,7 @@ jobs:
       - name: Cypress-Run
         uses: cypress-io/github-action@v5
         with:
-          command: npx cypress run 
+          command: npx cypress run --record --key 928c2d95-22e6-49df-b9db-01b8bf795213
 
       - name: Uploading artifact
         id: upload-artifact
